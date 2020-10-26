@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(199, 196, 196);
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(60, 61, 63);
+    position: relative;
+}
+.headFirst{
+    color: rgb(245, 7, 7);
+}
+.headSecond{
+    color: rgb(209, 209, 8);
+}
+.head p{
+    text-align: center;
+    color: aliceblue;
+}
+.hamburgermenu::before,
+.hamburgermenu::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 5px;
+    background-color: rgb(230, 222, 222);
+}
+.hamburgermenu{
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    width: 25px;
+    height: 5px;
+    background-color:rgb(241, 4, 4);
+    cursor: pointer;
+}
+.hamburgermenu::before{
+    transform: translateY(-10px);
+    background-color: black;
+} 
+.hamburgermenu::after{
+    transform: translateY(10px);
+    background-color: rgb(209, 209, 8);
+} 
+.hamburgermenu.active{
+    animation: animate 1s ease-in-out;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(100deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+.list{
+    position: absolute;
+    background-color:rgb(60, 61, 63) ;
+    height: 100vh;
+    width: 25%;
+    top: 0px;
+    left: 0;
+    display: none;
+    transition: all 2s ease-in-out;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 80px;
+    animation: animateList 1s ease-in-out;
+}
+@keyframes animateList{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.list li{
+    margin-top: 15px;
+    padding: 10px;
+}
+.list li:hover{
+    background-color: darkgray;
+}
+.list a {
+    text-decoration: none;
+    color: aliceblue;
+    cursor: pointer;
+}
+.list li:first-of-type{
+    margin-top: 70px;
+}
+.list.active{
+    display: block;
+}
+input{
+    text-align: center;
+}
+.formStart{
+    background-color: red;
+    font-size: 30px;
+    cursor: pointer;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.formStart:hover{
+    background-color: rgb(209, 209, 8);
+}
+.none{
+    display: none;
+}
+.show{
+    font-size: 40px;
+    color: red;
+}
+.showTimer{
+    font-size: 40px;
+    display: block;
+}
+.timer{
+    display: none;
+}
+.showTimer{
+    color: black;
+    display: block;
+}
+.result{
+    width: 100%;
+    height: 50%;
+    display: none;
+    margin: 0 auto;
+}
+table{
+    margin: 0 auto;
+    text-align: center;
+}
+th{
+    padding: 20px 20px;
+}
+td{
+    padding: 20px 20px;
+}
+.result a{
+    margin-bottom: 30px;
+    font-size: 30px;
+    border-bottom: 1px solid red;
+    text-decoration: none;
+    color: red;
+}
+.showResult{
+    display: block;
+}
+main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(199, 196, 196);
+    list-style: none;
+    text-align: center;
+    margin-top: 75px;
+}
+main .keyboard{
+   text-align: center;
+}
+main input{
+    width: 60%;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    outline: none;
+}
+.keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: linear-gradient(rgb(8, 8, 8) 40%, rgb(236, 9, 1),rgb(182, 182, 3));
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+    bottom: -100%;
+}
+
+.keyboard__keys {
+    text-align: center;
+}
+
+.keyboard__key {
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.keyboard__key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
+    width: 12%;
+}
+
+.keyboard__key--extra-wide {
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard__key--activatable::after {
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+    background: #08ff00;
+}
+
+.keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 481px){
+    .title{
+        display: none;
+    }
+}

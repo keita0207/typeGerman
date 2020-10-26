@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/level1.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="hamburgermenu"></div>
+            <div class="list">
+                <ul>
+                    <li><a href="./index.html">ホーム</a></li>
+                    <li><a href="./level1.html">レベル1</a></li>
+                    <li><a href="./level2.html">レベル2</a></li>
+                    <li><a href="./level3.html">レベル3</a></li>
+                    <li><a href="./levelall.html">全て</a></li>
+                    <li><a href="./vocabraries.html">単語を見る</a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <h1><span class="headFirst">タイプ</span><span class="headSecond">ジャーマン</span></h1>
+                <p>Typing Game for the Beginners of German Lerner </p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="result">
+            <table border="1" width="80%" cellspacing="0" cellpadding="5" bordercolor="#333333">
+                <tr>
+                    <th style="background-color: black; color: #ffffff;">スコア</th>
+                </tr>
+                <tr>
+                    <td class="score" style="font-size: 20px;"></td>
+                </tr>
+            </table>
+            <a href="./level1.html">ゲームへと戻る</a>
+        </div>
+        <form id="form_test">
+            <div class="formStart">開始する</div>
+            <div class="showLiteral">
+                <div class="timer">20</div>
+               <div class="showWords"></div>
+                <div id="input_value_box"></div>
+            </div>
+            <input class="use-keyboard-input" id="inputValue" value=""></input>
+        </form>
+    </main>
+    <script src="js/level1.js"></script>
+</body>
+</html>
