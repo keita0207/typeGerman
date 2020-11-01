@@ -69,7 +69,7 @@ const Keyboard = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "ß",
             "q", "w", "e", "r", "t", "z", "u", "i", "o", "p","ü",
             "a", "s", "d", "f", "g", "h", "j", "k", "l", "ö","ä",
-            "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
+            "z", "x", "c", "v", "b", "n", "m", ",", ".", "?","enter"
             "スペース"
         ];
 
@@ -80,27 +80,7 @@ const Keyboard = {
             keyElement.classList.add("keyboard__key");
 
             switch (key) {
-                case "backspace":
-                    keyElement.classList.add("keyboard__key--wide");
-                    keyElement.innerHTML = createIconHTML("backspace");
 
-                    keyElement.addEventListener("click", () => {
-                        this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
-                        this._triggerEvent("oninput");
-                    });
-
-                    break;
-
-                case "caps":
-                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
-                    keyElement.innerHTML = createIconHTML("keyboard_capslock");
-
-                    keyElement.addEventListener("click", () => {
-                        this._toggleCapsLock();
-                        keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
-                    });
-
-                    break;
 
                 case "enter":
                     keyElement.classList.add("keyboard__key--wide");
@@ -120,17 +100,6 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this.properties.value += " ";
                         this._triggerEvent("oninput");
-                    });
-
-                    break;
-
-                case "done":
-                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
-                    keyElement.innerHTML = createIconHTML("check_circle");
-
-                    keyElement.addEventListener("click", () => {
-                        this.close();
-                        this._triggerEvent("onclose");
                     });
 
                     break;
@@ -190,7 +159,7 @@ formStart.addEventListener('click',()=>{
     showWords.classList.add('show');
     input.focus();
     timer.classList.add('showTimer');
-    formStart.classList.add('none'); 
+    formStart.classList.add('none');
     let id = setInterval(function(){
         countDown();
         if(time < 0){
@@ -209,7 +178,7 @@ inputValue.addEventListener('input',() =>{
         finalScore += 10;
     }
     else{
-        
+
     }
 });
 function nextWords(){
@@ -232,7 +201,7 @@ function nextWords(){
 function countDown(){
     timer.textContent -= 1;
     time -= 1;
-    console.log(time);      
+    console.log(time);
 };
 
 Keyboard.init();
